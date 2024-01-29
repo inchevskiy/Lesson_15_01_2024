@@ -1,13 +1,27 @@
-number = int(input("Введіть чотиризначне число: "))
+def calculator():
+    while True:
+        print("Введіть операцію (+, -, *, /) або 'вихід' для виходу")
+        operation = input()
 
-thousands = number // 1000
-hundreds = (number // 100) % 10
-tens = (number // 10) % 10
-ones = number % 10
+        if operation == 'вихід':
+            break
 
-print(thousands)
-print(hundreds)
-print(tens)
-print(ones)
+        if operation in ('+', '-', '*', '/'):
+            num1 = float(input("Введіть перше число: "))
+            num2 = float(input("Введіть друге число: "))
 
+            if operation == '+':
+                print(num1 + num2)
+            elif operation == '-':
+                print(num1 - num2)
+            elif operation == '*':
+                print(num1 * num2)
+            elif operation == '/':
+                if num2 != 0:
+                    print(num1 / num2)
+                else:
+                    print("Помилка: Ділення на нуль неможливе!")
+        else:
+            print("Помилка: Неправильна операція!")
 
+calculator()
